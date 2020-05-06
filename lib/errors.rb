@@ -1,11 +1,13 @@
-class Errors
-    attr_reader errors
-    def initialize
-        @errors = []
+require_relative '../lib/files.rb'
+
+class Errors < Files
+
+    def initialize(file_path)
+        super(file_path)
     end
 
     def max_line_lenght(line)
-        line.size > 40
+        line_lenght(line) > 40
     end
 
     def no_single_line_methods

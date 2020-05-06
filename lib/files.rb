@@ -44,9 +44,9 @@ class Files
   end
 end
 
-fi = Files.new('lib/code.rb')
-line = fi.desc[1]
-puts fi.line_lenght(line)
+# fi = Files.new('lib/code.rb')
+# line = fi.desc[1]
+# puts fi.line_lenght(line)
 # result = fi.line_data
 # puts result.inspect
 # res = fi.line
