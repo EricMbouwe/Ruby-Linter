@@ -4,7 +4,114 @@
 
 
 > A linter developed in Ruby
-> It's a linter for beginners, it provides feedback about errors or warning in code little by little
+> It's a linter for beginners, it provides feedback about errors or warning in code ligne by ligne
+
+## Examples
+
+> Limit lines to 40 characters.
+```
+# bad
+puts 'lorem pesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets Lorem Ipsum passages, and more recently with desktop publishing'
+
+# good
+puts 'lorem pesetting, remaining essentially unchanged. It was '
+puts 'popularised in the 1960s with the release of Letraset sheets'
+puts 'Lorem Ipsum passages, and more recently with desktop publishing'
+
+```
+
+> Avoid single-line methods.
+```
+# bad
+def too_much; something; something_else; end
+
+# okish - notice that the first ; is required
+def no_braces_method; body end
+
+# okish - notice that the second ; is optional
+def no_braces_method; body; end
+
+# okish - valid syntax, but no ; makes it kind of hard to read
+def some_method() body end
+
+# good
+def some_method
+  body
+end
+
+```
+
+> No spaces after (, [ or before ], ). Use spaces around { and before }.
+```
+# bad
+some( arg ).other
+[ 1, 2, 3 ].each{|e| puts e}
+
+# good
+some(arg).other
+[1, 2, 3].each { |e| puts e }
+
+```
+
+> Use CamelCase for classes and modules.
+```
+# bad
+class Someclass
+  # some code
+end
+
+class Some_Class
+  # some code
+end
+
+class SomeXml
+  # some code
+end
+
+class XmlSomething
+  # some code
+end
+
+# good
+class SomeClass
+  # some code
+end
+
+class SomeXML
+  # some code
+end
+
+class XMLSomething
+  # some code
+end
+
+```
+
+> Use spaces around operators, after commas, colons and semicolons.
+```
+# bad
+sum=1+2
+a,b=1,2
+
+# good
+sum = 1 + 2
+a, b = 1, 2
+
+```
+
+> Balanced brackets
+```
+# bad
+diner = ['burger', 'cofee', 'cake'
+students = {tom:12, karl:18, anne:17
+animes = {[naruto, goku]:55, [one_pice, nicky}:35)
+
+# good
+diner = ['burger', 'cofee', 'cake']
+students = {tom:12, karl:18, anne:17}
+animes = {[naruto, goku]:55, [one_pice, nicky]:35}
+
+```
 
 ## Built With
 
@@ -32,13 +139,10 @@ clone the project locally
 
 In your terminal, change directory to the root of the project run `cd Ruby-capstone-project`
 
+### Run
+In your command line run `bin/main`
 
-## Authors
-
-👤 **Abror Mukimov**
-- Github: [abrormukimov](https://github.com/abrormukimov)
-- Linkedin: [abrormukimov](https://www.linkedin.com/in/abrormukimov)
-- Twitter: [abrormukimov](https://www.twitter.com/abrormukimov)
+## Author
 
 👤 **Eric Mbouwe**
 
@@ -60,7 +164,7 @@ Contributions, issues and feature requests are welcome! Start by:
 
 ##### Please feel free to contribute to any of these!
 
-Feel free to check the [issues page](https://github.com/abrormukimov/tic-tac-toe/issues).
+Feel free to check the [issues page](https://github.com/ericmbouwe/Ruby-capstone-project/issues).
 
 ## Show your support
 

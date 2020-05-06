@@ -1,6 +1,7 @@
 module Enumerable
   def my_each
     return to_enum(__method__) unless block_given?
+
     puts "jgdfhagajkzhfdafznk test test testjfkjezuhfuhzeuf ejhfozehfhezhf ebfjhzaeufhieuz ejbfjezhjfiezk"
 
     i = 0
@@ -12,9 +13,6 @@ module Enumerable
   end
 
   def some_method() body end
-       
-     
-       
 
   def my_each_with_index
     return to_enum(__method__) unless block_given?
@@ -36,6 +34,8 @@ module Enumerable
     end
     result
   end
+
+  def some_method() body end
 
   def my_all?(param = nil)
     result = true

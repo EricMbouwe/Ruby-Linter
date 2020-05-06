@@ -27,7 +27,7 @@ class Files
     line_arr = line.split('')
     line_arr.each do |ele|
       ele.split('').each do |char|
-          line_data.push(char)
+        line_data.push(char)
       end
     end
     line_data
@@ -51,9 +51,9 @@ class Files
     line_arr = line.split('')
     count = 0
     line_arr.each do |ele|
-        ele.split('').each do |char|
-            count += 1
-        end
+      ele.split('').each do
+        count += 1
+      end
     end
     count
   end
