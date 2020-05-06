@@ -22,17 +22,32 @@ class Files
     lines_data
   end
 
+  def one_line_data_char(line)
+    line_data = []
+    line_arr = line.split('')
+    line_arr.each do |ele|
+      ele.split('').each do |char|
+          line_data.push(char)
+      end
+    end
+    line_data
+  end
+
+  def one_line_data_word(line)
+    line_data = line.split
+    line_data
+  end
+
   def line_index
     lines = line
     hash = {}
-
     lines.each_with_index do |line, id|
       hash[id] = line
     end
     hash
   end
 
-  def line_lenght(line)
+  def line_length(line)
     line_arr = line.split('')
     count = 0
     line_arr.each do |ele|
@@ -46,7 +61,8 @@ end
 
 # fi = Files.new('lib/code.rb')
 # line = fi.desc[1]
-# puts fi.line_lenght(line)
+# puts fi.one_line_data_word(line).inspect
+# puts fi.one_line_data_char(line).inspect
 # result = fi.line_data
 # puts result.inspect
 # res = fi.line

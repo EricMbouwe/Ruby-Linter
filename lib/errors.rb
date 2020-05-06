@@ -6,56 +6,53 @@ class Errors < Files
         super(file_path)
     end
 
-    def max_line_lenght(line)
-        line_lenght(line) > 40
+    def max_line_length(line)
+        line_length(line) > 80
     end
 
-    def no_single_line_methods
+    def no_single_line_methods(line)
+        data = one_line_data_word(line)
+        data.include?('def') && data.include?('end')
     end
 
-    def two_or_ore_empty_lines
+    def spaces_braces(line)
     end
 
-    def spaces_braces
+    def camel_case(line)
     end
 
-    def camel_case
-    end
-
-    def spaces_operators
-    end
-
-    def empty_lines_around_bodies
+    def spaces_operators(line)
     end
 
     def balanced_brackets(line)
         stack = []
-        line.each do |ele|
-            if ele include?("(", "{", "[")
+        data = one_line_data_char(line)
+        data.each do |ele|
+            if ele.include?("(") || ele.include?("{") || ele.include?("[")
               stack.push(ele) 
             else  
                 unless stack
-                    return False
+                    return false
                 end
                 current_ele = stack.pop() 
                 if current_ele == '('
                     unless ele == ")"
-                        return False
+                        return false
                     end
                 elsif current_ele == '{'
                     unless ele == "}"
-                        return False
+                        return false
                     end
                 elsif current_ele == '['
                     unless ele == "]"
-                        return False
+                        return false
                     end
                 end
             end
             if stack
-                return False
+                return false
             end
         end
-        return True
+        return true
     end
 end

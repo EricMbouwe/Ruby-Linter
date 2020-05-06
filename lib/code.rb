@@ -11,6 +11,11 @@ module Enumerable
     self
   end
 
+  def some_method() body end
+       
+     
+       
+
   def my_each_with_index
     return to_enum(__method__) unless block_given?
 
