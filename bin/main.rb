@@ -17,3 +17,5 @@ else
   puts "1 file inspected, " + "#{messages.size} offense(s) ".colorize(:red) + "found.\n\n"
   puts messages
 end
+
+# puts String.colors

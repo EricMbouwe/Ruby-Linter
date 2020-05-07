@@ -1,6 +1,6 @@
 # Ruby Linter
 
-This is a linter developed in Ruby for Ruby (.rb) files.It's a linter for beginners, it provides feedback about errors or warning in code ligne by ligne by :
+This is a linter developed in Ruby for Ruby (.rb) files. It's a linter for beginners, it provides feedback about errors or warning in code line by line by :
 - flagging bugs in your code from some syntax errors
 - giving you warnings when code is not correct
 - heplping you to keep a consistent code style
@@ -136,7 +136,7 @@ ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin17]
 ```
 
 ### Installing
-- clone the project locally
+- Clone the project locally
 
 - In your terminal, change directory to the root of the project run `cd Ruby-capstone-project`
 
@@ -144,9 +144,9 @@ ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin17]
 The linter parse your file line by line and flag errors and/or warnings on your terminal
 
 ### How to use?
-- after installing the project, copy and paste your target file("filename.rb") in the `/lints` folder of the project
+- After installing the project, copy and paste your target file("filename.rb") to the project's `/lints` folder
 
-- run `bundle install` to install necessary dependancies.
+- Run `bundle install` to install necessary dependencies.
 
 ### Run
 - In your Terminal run `bin/main lints/filename.rb`
