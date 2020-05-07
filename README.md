@@ -136,9 +136,9 @@ ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin17]
 ```
 
 ### Installing
-clone the project locally
+- clone the project locally
 
-In your terminal, change directory to the root of the project run `cd Ruby-capstone-project`
+- In your terminal, change directory to the root of the project run `cd Ruby-capstone-project`
 
 ### How it works?
 The linter parse your file line by line and flag errors and/or warnings on your terminal
@@ -149,7 +149,7 @@ The linter parse your file line by line and flag errors and/or warnings on your 
 - run `bundle install` to install necessary dependancies.
 
 ### Run
-In your Terminal run `bin/main lints/filename.rb`
+- In your Terminal run `bin/main lints/filename.rb`
 
 ## Author
 

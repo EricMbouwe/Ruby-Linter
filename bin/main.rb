@@ -17,13 +17,3 @@ else
   puts "1 file inspected, " + "#{messages.size} offense(s) ".colorize(:red) + "found.\n\n"
   puts messages
 end
-
-# hash.each_with_index do |line, id|
-#     line = lines[id]
-#     ce.check_max_line_length(line, id)
-# end
-# hash = ce.desc
-# lines = ce.line
-# line = hash[3]
-# ce.check_max_line_length(line)
-# ce.check_all(lines)

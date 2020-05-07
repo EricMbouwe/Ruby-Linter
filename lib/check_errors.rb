@@ -10,6 +10,8 @@ class CheckErrors < Errors
     @messages = []
   end
 
+  private
+
   def check_max_line_length(line, id)
     text = "Maximum Line Length, Limit lines to 40 characters."
     message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + text
@@ -19,6 +21,8 @@ class CheckErrors < Errors
     end
     ''
   end
+
+  private
 
   def check_no_single_line_methods(line, id)
     text =  "No Single-line Methods, Avoid single-line methods."
@@ -30,8 +34,10 @@ class CheckErrors < Errors
     ''
   end
 
+  private
+
   def check_spaces_braces(line, id)
-    text =  "Spaces and Braces, No spaces after (, [ or before ], )"
+    text =  "Spaces and Braces, No spaces after '(', '[' or before ']', ')'"
     message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + text
     if spaces_braces(line)
       messages.push(message)
@@ -39,6 +45,8 @@ class CheckErrors < Errors
     end
     ''
   end
+
+  private
 
   def check_camel_case(line, id)
     text = "CamelCase for Classes, Use CamelCase for classes and modules."
@@ -50,6 +58,8 @@ class CheckErrors < Errors
     ''
   end
 
+  private
+
   def check_spaces_operators(line, id)
     text = 'Spaces and Operators, Use spaces around operators, after commas, colons and semicolons.'
     message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + text
@@ -59,6 +69,8 @@ class CheckErrors < Errors
     end
     ''
   end
+
+  private
 
   def check_balanced_brackets(line, id)
     text = "Balanced brackets, lacking of pairs."
@@ -70,12 +82,11 @@ class CheckErrors < Errors
     ''
   end
 
+  public
+
   def check_all
     desc.each_with_index do |line, id|
       line = desc[id]
-      # data = one_line_data_chars(line)
-      # puts data.inspect
-      # puts data.include?('(')
       check_max_line_length(line, id)
       check_no_single_line_methods(line, id)
       check_spaces_braces(line, id)
@@ -86,7 +97,3 @@ class CheckErrors < Errors
   end
 end
 
-# ce = CheckErrors.new('lib/code.rb')
-# puts ce.inspect
-# er = Errors.new('lib/code.rb')
-# puts er.inspect
