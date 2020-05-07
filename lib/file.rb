@@ -7,7 +7,7 @@ class Files
   end
 
   private
-  
+
   def get_lines
     opened_file = File.open(file)
     file_lines = opened_file.readlines.map(&:chomp)

@@ -1,7 +1,6 @@
 require_relative '../lib/file.rb'
 
 class Errors < Files
-
   def initialize(file_path)
     super(file_path)
   end
@@ -23,7 +22,7 @@ class Errors < Files
 
   def spaces_braces(line)
     data = one_line_data_chars(line)
-    data.include?("(")
+    data.include?('(')
   end
 
   private
@@ -47,5 +46,4 @@ class Errors < Files
       end
     end
   end
-  
 end

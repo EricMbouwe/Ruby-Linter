@@ -119,6 +119,7 @@ animes = {[naruto, goku]:55, [one_pice, nicky]:35}
 - Ruby
 - Visual Studio Code
 - rspec
+- Rubocop
 
 
 ## Getting Started
@@ -135,13 +136,16 @@ $ ruby -v
 ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin17]
 ```
 
-### Installing
-- Clone the project locally
-
-- In your terminal, change directory to the root of the project run `cd Ruby-capstone-project`
-
 ### How it works?
 The linter parse your file line by line and flag errors and/or warnings on your terminal
+
+### Installing
+- In your terminal, Clone the project locally and then Change directory to the root of the project
+```
+$ git clone https://github.com/EricMbouwe/Ruby-capstone-project.git
+$ cd Ruby-capstone-project
+
+```
 
 ### How to use?
 - After installing the project, copy and paste your target file("filename.rb") to the project's `/lints` folder
@@ -149,7 +153,11 @@ The linter parse your file line by line and flag errors and/or warnings on your 
 - Run `bundle install` to install necessary dependencies.
 
 ### Run
-- In your Terminal run `bin/main lints/filename.rb`
+- In your Terminal run
+```
+$ bin/main.rb lints/filename.rb
+
+```
 
 ## Author
 
