@@ -12,7 +12,7 @@ module Enumerable
     self
   end
 
-  def some_method (   ) body end
+  def some_method (    body end
     {dfzefgzeg}(    eijfiejrf    eflknej)
 
   def my_each_with_index

@@ -56,7 +56,7 @@ class Errors < Files
       if ele.include?('(') || ele.include?('{') || ele.include?('[')
         stack.push(ele)
       else
-        unless stack
+        if stack
           return false
         end
 

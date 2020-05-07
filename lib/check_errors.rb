@@ -1,5 +1,6 @@
 require_relative '../lib/errors.rb'
 require_relative '../lib/file.rb'
+require 'colorize'
 
 class CheckErrors < Errors
   attr_accessor :messages
@@ -10,16 +11,16 @@ class CheckErrors < Errors
   end
 
   def check_max_line_length(line, id)
-    message = "##{file}:#{id + 1}: Warning: Maximum Line Length, Limit lines to 40 characters."
+    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + "Maximum Line Length, Limit lines to 40 characters.".colorize(:orange)
     if max_line_length(line)
       messages.push(message)
       return message
     end
-    'good length'
+    ''
   end
 
   def check_no_single_line_methods(line, id)
-    message = "##{file}:#{id + 1}: Warning: No Single-line Methods, Avoid single-line methods."
+    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + "No Single-line Methods, Avoid single-line methods."
     if no_single_line_methods(line)
       messages.push(message)
       return message
@@ -28,8 +29,7 @@ class CheckErrors < Errors
   end
 
   def check_spaces_braces(line, id)
-    message = "##{file}:#{id + 1}: Warning: Spaces and Braces, No spaces after (, [ or before ], )
-    Use spaces around { and before }."
+    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + "Spaces and Braces, No spaces after (, [ or before ], )"
     if spaces_braces(line)
       messages.push(message)
       return message
@@ -38,7 +38,7 @@ class CheckErrors < Errors
   end
 
   def check_camel_case(line, id)
-    message = "##{file}:#{id + 1}: Error: CamelCase for Classes, Use CamelCase for classes and modules."
+    message = "##{file}:#{id + 1}: Error: CamelCase for Classes, Use CamelCase for classes and modules.".colorize(:red)
     if camel_case(line)
       messages.push(message)
       return message
@@ -47,8 +47,8 @@ class CheckErrors < Errors
   end
 
   def check_spaces_operators(line, id)
-    message = "##{file}:#{id + 1}: Warning: Spaces and Operators, Use spaces around operators,
-    after commas, colons and semicolons."
+    text = 'Spaces and Operators, Use spaces around operators, after commas, colons and semicolons.'
+    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + text
     if spaces_operators(line)
       messages.push(message)
       return message
@@ -57,7 +57,7 @@ class CheckErrors < Errors
   end
 
   def check_balanced_brackets(line, id)
-    message = "##{file}:#{id + 1}: Error: Balanced brackets, lacking of pairs."
+    message = "##{file}:#{id + 1}: Error: Balanced brackets, lacking of pairs.".colorize(:red)
     if balanced_brackets(line)
       messages.push(message)
       return message
