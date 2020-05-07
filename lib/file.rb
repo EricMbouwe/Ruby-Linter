@@ -3,17 +3,17 @@ class Files
 
   def initialize(file_path)
     @file = file_path
-    @desc = line_index
+    @desc = lines_with_index
   end
 
-  def line
+  def get_lines
     opened_file = File.open(file)
     file_lines = opened_file.readlines.map(&:chomp)
     opened_file.close
     file_lines
   end
 
-  def line_data
+  def lines_data
     lines_data = []
     File.foreach(file) do |line|
       line_data = line.split
@@ -22,7 +22,7 @@ class Files
     lines_data
   end
 
-  def one_line_data_char(line)
+  def one_line_data_chars(line)
     line_data = []
     line_arr = line.split('')
     line_arr.each do |ele|
@@ -33,13 +33,13 @@ class Files
     line_data
   end
 
-  def one_line_data_word(line)
+  def one_line_data_words(line)
     line_data = line.split
     line_data
   end
 
-  def line_index
-    lines = line
+  def lines_with_index
+    lines = get_lines
     hash = {}
     lines.each_with_index do |line, id|
       hash[id] = line

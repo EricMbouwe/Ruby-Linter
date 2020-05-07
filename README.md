@@ -1,6 +1,6 @@
 # Ruby Linter
 
-![screenshot](images/.png)
+![screenshot](./linter.PNG)
 
 
 > A linter developed in Ruby

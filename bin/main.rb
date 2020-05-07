@@ -11,7 +11,7 @@ ce.check_all
 if messages.empty?
   puts 'No errors found, 0 offense!'
 else
-  puts "1 file inspected, #{messages.size} offenses found."
+  puts "1 file inspected, #{messages.size} offense(s) found."
   puts messages
 end
 
