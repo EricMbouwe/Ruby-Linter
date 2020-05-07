@@ -11,7 +11,8 @@ class CheckErrors < Errors
   end
 
   def check_max_line_length(line, id)
-    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + "Maximum Line Length, Limit lines to 40 characters.".colorize(:orange)
+    text = "Maximum Line Length, Limit lines to 40 characters."
+    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + text
     if max_line_length(line)
       messages.push(message)
       return message
@@ -20,7 +21,8 @@ class CheckErrors < Errors
   end
 
   def check_no_single_line_methods(line, id)
-    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + "No Single-line Methods, Avoid single-line methods."
+    text =  "No Single-line Methods, Avoid single-line methods."
+    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + text
     if no_single_line_methods(line)
       messages.push(message)
       return message
@@ -29,7 +31,8 @@ class CheckErrors < Errors
   end
 
   def check_spaces_braces(line, id)
-    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + "Spaces and Braces, No spaces after (, [ or before ], )"
+    text =  "Spaces and Braces, No spaces after (, [ or before ], )"
+    message = "##{file}:#{id + 1}:".colorize(:blue) + " Warning: ".colorize(:yellow) + text
     if spaces_braces(line)
       messages.push(message)
       return message
@@ -38,7 +41,8 @@ class CheckErrors < Errors
   end
 
   def check_camel_case(line, id)
-    message = "##{file}:#{id + 1}: Error: CamelCase for Classes, Use CamelCase for classes and modules.".colorize(:red)
+    text = "CamelCase for Classes, Use CamelCase for classes and modules."
+    message = "##{file}:#{id + 1}: ".colorize(:red) + " Error: ".colorize(:red) + text.colorize(:red)
     if camel_case(line)
       messages.push(message)
       return message
@@ -57,7 +61,8 @@ class CheckErrors < Errors
   end
 
   def check_balanced_brackets(line, id)
-    message = "##{file}:#{id + 1}: Error: Balanced brackets, lacking of pairs.".colorize(:red)
+    text = "Balanced brackets, lacking of pairs."
+    message = "##{file}:#{id + 1}:".colorize(:red) + " Error: ".colorize(:red) + text.colorize(:red)
     if balanced_brackets(line)
       messages.push(message)
       return message

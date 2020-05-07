@@ -4,7 +4,9 @@ require_relative '../lib/errors.rb'
 require_relative '../lib/file.rb'
 require 'colorize'
 
-ce = CheckErrors.new('lib/code.rb')
+
+file_path = ARGV.join('')
+ce = CheckErrors.new(file_path)
 messages = ce.messages
 
 ce.check_all
