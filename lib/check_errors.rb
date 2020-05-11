@@ -10,8 +10,6 @@ class CheckErrors < Errors
     @messages = []
   end
 
-  private
-
   def check_max_line_length(line, id)
     text = 'Maximum Line Length, Limit lines to 40 characters.'
     message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Warning: '.colorize(:yellow) + text
@@ -21,8 +19,6 @@ class CheckErrors < Errors
     end
     ''
   end
-
-  private
 
   def check_no_single_line_methods(line, id)
     text = 'No Single-line Methods, Avoid single-line methods.'
@@ -34,8 +30,6 @@ class CheckErrors < Errors
     ''
   end
 
-  private
-
   def check_spaces_braces(line, id)
     text = "Spaces and Braces, No spaces after '(', '[' or before ']', ')'"
     message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Warning: '.colorize(:yellow) + text
@@ -45,8 +39,6 @@ class CheckErrors < Errors
     end
     ''
   end
-
-  private
 
   def check_camel_case(line, id)
     text = 'CamelCase for Classes, Use CamelCase for classes and modules.'
@@ -58,8 +50,6 @@ class CheckErrors < Errors
     ''
   end
 
-  private
-
   def check_spaces_operators(line, id)
     text = 'Spaces and Operators, Use spaces around operators, after commas, colons and semicolons.'
     message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Warning: '.colorize(:yellow) + text
@@ -70,8 +60,6 @@ class CheckErrors < Errors
     ''
   end
 
-  private
-
   def check_balanced_brackets(line, id)
     text = 'Balanced brackets, lacking of pairs.'
     message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Error: '.colorize(:red) + text.colorize(:red)
@@ -81,8 +69,6 @@ class CheckErrors < Errors
     end
     ''
   end
-
-  public
 
   def check_all
     desc.each_with_index do |line, id|

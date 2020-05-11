@@ -21,8 +21,6 @@ class Errors < Files
   private
 
   def spaces_braces(line)
-    data = one_line_data_chars(line)
-    data.include?('(')
   end
 
   private
@@ -38,12 +36,5 @@ class Errors < Files
   private
 
   def balanced_brackets(line)
-    stack = []
-    data = one_line_data_chars(line)
-    data.each do |ele|
-      if ele.include?('(') || ele.include?('{') || ele.include?('[')
-        stack.push(ele)
-      end
-    end
   end
 end

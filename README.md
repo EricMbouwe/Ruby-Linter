@@ -1,6 +1,8 @@
+[![hire-badge](https://img.shields.io/badge/Consult%20/%20Hire%20EricMbouwe-Click%20to%20Contact-brightgreen)](mailto:consult.ericmbouwe@gmail.com) [![Twitter Follow](https://img.shields.io/twitter/follow/EricMbouwe?label=Follow%20EricMbouwe%20on%20Twitter&style=social)](https://twitter.com/EricMbouwe)
+
 # Ruby Linter
 
-This is a linter developed in Ruby for Ruby (.rb) files. It's a linter for beginners, it provides feedback about errors or warning in code line by line by :
+This is a [linter](https://sourcelevel.io/blog/what-is-a-linter-and-why-your-team-should-use-it) developed in Ruby for Ruby (.rb) files. It's a linter for beginners, it provides feedback about errors or warning in code line by line by :
 - flagging bugs in your code from some syntax errors
 - giving you warnings when code is not correct
 - heplping you to keep a consistent code style
@@ -120,6 +122,7 @@ animes = {[naruto, goku]:55, [one_pice, nicky]:35}
 - Visual Studio Code
 - rspec
 - Rubocop
+- colorize
 
 
 ## Getting Started
@@ -137,26 +140,25 @@ ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin17]
 ```
 
 ### How it works?
-The linter parse your file line by line and flag errors and/or warnings on your terminal
+The linter parse your file line by line from the first one to the last and flag errors and/or warnings on your terminal
 
 ### Installing
 - In your terminal, Clone the project locally and then Change directory to the root of the project
 ```
 $ git clone https://github.com/EricMbouwe/Ruby-capstone-project.git
-$ cd Ruby-capstone-project
 
+$ cd Ruby-capstone-project
 ```
 
 ### How to use?
-- After installing the project, copy and paste your target file("filename.rb") to the project's `/lints` folder
+- After installing the project, copy and paste your target file `"filename.rb"` to the project's `/lints` folder
 
-- Run `bundle install` to install necessary dependencies.
+- In your terminal, run `bundle install` to install necessary dependencies.
 
 ### Run
 - In your Terminal run
 ```
 $ bin/main.rb lints/filename.rb
-
 ```
 
 ## Author

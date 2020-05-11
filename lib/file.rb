@@ -6,16 +6,12 @@ class Files
     @desc = lines_with_index
   end
 
-  private
-
   def get_lines
     opened_file = File.open(file)
     file_lines = opened_file.readlines.map(&:chomp)
     opened_file.close
     file_lines
   end
-
-  private
 
   def lines_data
     lines_data = []
@@ -41,8 +37,6 @@ class Files
     line_data = line.split
     line_data
   end
-
-  private
 
   def lines_with_index
     lines = get_lines
