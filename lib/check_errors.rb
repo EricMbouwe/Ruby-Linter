@@ -11,7 +11,7 @@ class CheckErrors < Errors
   end
 
   def check_max_line_length(line, id)
-    text = 'Maximum Line Length, Limit lines to 40 characters.'
+    text = 'Maximum Line Length, Limit lines to 50 characters.'
     message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Warning: '.colorize(:yellow) + text
     if max_line_length(line)
       messages.push(message)
@@ -31,7 +31,7 @@ class CheckErrors < Errors
   end
 
   def check_spaces_braces(line, id)
-    text = "Spaces and Braces, No spaces after '(', '[' or before ']', ')'"
+    text = "No spaces after '(', '[' or before ']', ')'"
     message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Warning: '.colorize(:yellow) + text
     if spaces_braces(line)
       messages.push(message)
