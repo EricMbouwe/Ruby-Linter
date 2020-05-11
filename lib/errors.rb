@@ -60,25 +60,4 @@ class Errors < Files
     end
     false
   end
-
-  def balanced_brackets(line)
-    data = one_line_data_chars(line)
-    stack = []
-    lz = data.size - 1
-    i = 0
-    if data.include?('[') || data.include?('(') || data.include?(']') || data.include?(')') || data.include?('{') || data.include?('}')
-      while i < lz
-        if data[i] == '['
-          stack.push(data[i])
-        end
-        if data[i] == ']'
-          if stack.include?('[')
-            stack.pop
-            return true
-          end
-        end
-      end
-    end
-    false
-  end
 end

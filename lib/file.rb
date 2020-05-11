@@ -6,7 +6,7 @@ class Files
     @desc = lines_with_index
   end
 
-  def get_lines
+  def lines
     opened_file = File.open(file)
     file_lines = opened_file.readlines.map(&:chomp)
     opened_file.close
@@ -39,9 +39,9 @@ class Files
   end
 
   def lines_with_index
-    lines = get_lines
+    line = lines
     hash = {}
-    lines.each_with_index do |line, id|
+    line.each_with_index do |line, id|
       hash[id] = line
     end
     hash
@@ -58,12 +58,3 @@ class Files
     count
   end
 end
-
-# fi = Files.new('lib/code.rb')
-# line = fi.desc[1]
-# puts fi.one_line_data_word(line).inspect
-# puts fi.one_line_data_char(line).inspect
-# result = fi.line_data
-# puts result.inspect
-# res = fi.line
-# puts res.inspect

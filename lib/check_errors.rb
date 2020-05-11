@@ -78,7 +78,7 @@ class CheckErrors < Errors
       check_spaces_braces(line, id)
       check_camel_case(line, id)
       check_spaces_operators(line, id)
-      check_balanced_brackets(line, id)
+      # check_balanced_brackets(line, id)
     end
   end
 end

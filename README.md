@@ -7,7 +7,7 @@ This is a [linter](https://sourcelevel.io/blog/what-is-a-linter-and-why-your-tea
 - giving you warnings when code is not correct
 - heplping you to keep a consistent code style
 
-![screenshot](./linter.PNG)
+![screenshot](./linter1.PNG)
 
 ## Examples
 

@@ -16,8 +16,5 @@ describe 'CheckErrors' do
 
     it 'check for spaces around operators, after commas, colons and semicolons' do
     end
-
-    it 'check if brackets are balanced in a line' do
-    end
   end
 end
