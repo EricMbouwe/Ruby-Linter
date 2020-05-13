@@ -47,6 +47,8 @@ Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: false
+Lint/ShadowedArgument:
+  Enabled: false
 Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:
