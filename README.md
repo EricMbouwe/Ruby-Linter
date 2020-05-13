@@ -160,7 +160,7 @@ $ cd Ruby-capstone-project
 ### Run
 - In your Terminal run
 ```
-$ bin/main lints/filename.rb
+$ bin/main.rb lints/filename.rb
 ```
 
 ## Author
