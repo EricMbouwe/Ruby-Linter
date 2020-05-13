@@ -8,7 +8,7 @@
 
 # def max_line_length(line)  line.size > 40 end
 
-# game.display_board( game.board )
+# game.display_board(game.board)
 
 # current_player.positions = [1, 5, 9]
 

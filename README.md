@@ -9,6 +9,8 @@ This is a [linter](https://sourcelevel.io/blog/what-is-a-linter-and-why-your-tea
 
 ![screenshot](./linter1.PNG)
 
+[Presentation video](https://www.loom.com/share/1ebf6d12968e44eb96c9cc72da266845)
+
 ## Examples
 
 > Limit lines to 40 characters.
@@ -158,7 +160,7 @@ $ cd Ruby-capstone-project
 ### Run
 - In your Terminal run
 ```
-$ bin/main.rb lints/filename.rb
+$ bin/main lints/filename.rb
 ```
 
 ## Author
