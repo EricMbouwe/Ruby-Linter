@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 require_relative '../lib/check_errors.rb'
-require_relative '../lib/errors.rb'
-require_relative '../lib/file.rb'
 require 'colorize'
 
 file_path = ARGV.join('')

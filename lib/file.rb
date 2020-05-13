@@ -22,7 +22,7 @@ class Files
     lines_data
   end
 
-  def one_line_data_chars(line)
+  def self.one_line_data_chars(line)
     line_data = []
     line_arr = line.split('')
     line_arr.each do |ele|
@@ -33,21 +33,21 @@ class Files
     line_data
   end
 
-  def one_line_data_words(line)
+  def self.one_line_data_words(line)
     line_data = line.split
     line_data
   end
 
   def lines_with_index
-    line = lines
+    filelines = lines
     hash = {}
-    line.each_with_index do |line, id|
+    filelines.each_with_index do |line, id|
       hash[id] = line
     end
     hash
   end
 
-  def line_length(line)
+  def self.line_length(line)
     line_arr = line.split('')
     count = 0
     line_arr.each do |ele|

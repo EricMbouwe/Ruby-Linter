@@ -1,19 +1,16 @@
 require_relative '../lib/file.rb'
 
-class Errors < Files
-  def initialize(file_path)
-    super(file_path)
-  end
-
+module ErrorMethods
   def max_line_length(line)
-    line_length(line) > 50
+    Files.line_length(line) > 50
   end
 
   def no_single_line_methods(line)
-    data = one_line_data_words(line)
+    data = Files.one_line_data_words(line)
     data.include?('def') && data.include?('end')
   end
 
+  # rubocop:disable Metrics/BlockNesting
   def spaces_braces(line)
     lz = line.size - 1
     i = 0
@@ -35,7 +32,7 @@ class Errors < Files
   end
 
   def camel_case(line)
-    data = one_line_data_words(line)
+    data = Files.one_line_data_words(line)
     classname = data[1]
     if data[0] == 'class'
       return true if classname[0].downcase
@@ -59,5 +56,12 @@ class Errors < Files
       end
     end
     false
+  end
+  # rubocop:enable Metrics/BlockNesting
+end
+
+class Errors < Files
+  def initialize(file_path)
+    super(file_path)
   end
 end
