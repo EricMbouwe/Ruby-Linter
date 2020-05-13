@@ -45,9 +45,9 @@ RSpec.describe ErrorMethods do
     it 'checks the usage of CamelCase when naming a class and module' do
       expect(camel_case(line1)).to be(true)
     end
-    # it 'checks the usage of CamelCase when naming a class and module' do
-    #   expect(camel_case(line)).not_to be(true)
-    # end
+    it 'checks the usage of CamelCase when naming a class and module' do
+      expect(camel_case(line)).to be(true)
+    end
   end
 
   describe '#spaces_operators' do
