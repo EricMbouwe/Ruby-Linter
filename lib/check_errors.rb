@@ -62,16 +62,6 @@ class CheckErrors < Errors
     ''
   end
 
-  def check_balanced_brackets(line, id)
-    text = 'Balanced brackets, lacking of pairs.'
-    message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Error: '.colorize(:red) + text.colorize(:red)
-    if balanced_brackets(line)
-      messages.push(message)
-      return message
-    end
-    ''
-  end
-
   def check_all
     desc.each_with_index do |line, id|
       line = desc[id]
