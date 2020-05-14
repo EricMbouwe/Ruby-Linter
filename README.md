@@ -104,20 +104,6 @@ a, b = 1, 2
 
 ```
 
-> Balanced brackets
-```
-# bad
-diner = ['burger', 'cofee', 'cake'
-students = {tom:12, karl:18, anne:17
-animes = {[naruto, goku]:55, [one_pice, nicky}:35)
-
-# good
-diner = ['burger', 'cofee', 'cake']
-students = {tom:12, karl:18, anne:17}
-animes = {[naruto, goku]:55, [one_pice, nicky]:35}
-
-```
-
 ## Built With
 
 - Ruby
@@ -155,7 +141,15 @@ $ cd Ruby-capstone-project
 ### How to use?
 - After installing the project, copy and paste your target file `"filename.rb"` to the project's `/lints` folder
 
-- In your terminal, run `bundle install` to install necessary dependencies.
+- In your terminal, install the gems in the Gemfile by running
+```
+bundle install
+```
+Else you can install the gems system-wide by using:
+```
+gem install rspec
+gem install colorize
+```
 
 ### Run
 - In your Terminal run
