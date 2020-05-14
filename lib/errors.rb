@@ -11,7 +11,7 @@ module ErrorMethods
   end
 
   # rubocop:disable Metrics/BlockNesting
-  def spaces_braces(line)
+  def spaces_parenthesis(line)
     lz = line.size - 1
     i = 0
     if line.include?('[') || line.include?('(') || line.include?(']') || line.include?(')') || line.include?('{') || line.include?('}')
@@ -20,7 +20,19 @@ module ErrorMethods
           return true if line[i + 1] == ' '
         elsif line[i] == ']' || line[i] == ')'
           return true if line[i - 1] == ' '
-        elsif line[i] == '{'
+        end
+        i += 1
+      end
+    end
+    false
+  end
+
+  def spaces_braces(line)
+    lz = line.size - 1
+    i = 0
+    if line.include?('{') || line.include?('}')
+      while i < lz
+        if line[i] == '{'
           return true if line[i + 1] != ' '
         elsif line[i] == '}'
           return true if line[i - 1] != ' '

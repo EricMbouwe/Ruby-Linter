@@ -49,6 +49,8 @@ Lint/StructNewOverride:
   Enabled: false
 Lint/ShadowedArgument:
   Enabled: false
+Lint/UselessAccessModifier:
+  Enabled: false
 Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:

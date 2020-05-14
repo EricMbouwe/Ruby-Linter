@@ -6,22 +6,6 @@ class Files
     @desc = lines_with_index
   end
 
-  def lines
-    opened_file = File.open(file)
-    file_lines = opened_file.readlines.map(&:chomp)
-    opened_file.close
-    file_lines
-  end
-
-  def lines_data
-    lines_data = []
-    File.foreach(file) do |line|
-      line_data = line.split
-      lines_data.push(line_data)
-    end
-    lines_data
-  end
-
   def self.one_line_data_chars(line)
     line_data = []
     line_arr = line.split('')
@@ -38,15 +22,6 @@ class Files
     line_data
   end
 
-  def lines_with_index
-    filelines = lines
-    hash = {}
-    filelines.each_with_index do |line, id|
-      hash[id] = line
-    end
-    hash
-  end
-
   def self.line_length(line)
     line_arr = line.split('')
     count = 0
@@ -56,5 +31,25 @@ class Files
       end
     end
     count
+  end
+
+  private
+
+  def lines
+    opened_file = File.open(file)
+    file_lines = opened_file.readlines.map(&:chomp)
+    opened_file.close
+    file_lines
+  end
+
+  private
+
+  def lines_with_index
+    filelines = lines
+    hash = {}
+    filelines.each_with_index do |line, id|
+      hash[id] = line
+    end
+    hash
   end
 end

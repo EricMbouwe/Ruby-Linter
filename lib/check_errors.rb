@@ -12,6 +12,20 @@ class CheckErrors < Errors
     @messages = []
   end
 
+  def check_all
+    desc.each_with_index do |line, id|
+      line = desc[id]
+      check_max_line_length(line, id)
+      check_no_single_line_methods(line, id)
+      check_spaces_parenthesis(line, id)
+      check_spaces_braces(line, id)
+      check_camel_case(line, id)
+      check_spaces_operators(line, id)
+    end
+  end
+
+  private
+
   def check_max_line_length(line, id)
     text = 'Maximum Line Length, Limit lines to 50 characters.'
     message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Warning: '.colorize(:yellow) + text
@@ -21,6 +35,8 @@ class CheckErrors < Errors
     end
     ''
   end
+
+  private
 
   def check_no_single_line_methods(line, id)
     text = 'No Single-line Methods, Avoid single-line methods.'
@@ -32,8 +48,10 @@ class CheckErrors < Errors
     ''
   end
 
+  private
+
   def check_spaces_braces(line, id)
-    text = "No spaces after '(', '[' or before ']', ')'"
+    text = "Use space after '{' and before '}'"
     message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Warning: '.colorize(:yellow) + text
     if spaces_braces(line)
       messages.push(message)
@@ -41,6 +59,20 @@ class CheckErrors < Errors
     end
     ''
   end
+
+  private
+
+  def check_spaces_parenthesis(line, id)
+    text = "No spaces after '(', '[' or before ']', ')'"
+    message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Warning: '.colorize(:yellow) + text
+    if spaces_parenthesis(line)
+      messages.push(message)
+      return message
+    end
+    ''
+  end
+
+  private
 
   def check_camel_case(line, id)
     text = 'CamelCase for Classes, Use CamelCase for classes and modules.'
@@ -52,6 +84,8 @@ class CheckErrors < Errors
     ''
   end
 
+  private
+
   def check_spaces_operators(line, id)
     text = 'Spaces and Operators, Use spaces around operators, after commas, colons and semicolons.'
     message = "##{file}:#{id + 1}:".colorize(:cyan) + ' Warning: '.colorize(:yellow) + text
@@ -60,16 +94,5 @@ class CheckErrors < Errors
       return message
     end
     ''
-  end
-
-  def check_all
-    desc.each_with_index do |line, id|
-      line = desc[id]
-      check_max_line_length(line, id)
-      check_no_single_line_methods(line, id)
-      check_spaces_braces(line, id)
-      check_camel_case(line, id)
-      check_spaces_operators(line, id)
-    end
   end
 end
