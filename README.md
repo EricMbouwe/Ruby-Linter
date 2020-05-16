@@ -13,7 +13,7 @@ This is a [linter](https://sourcelevel.io/blog/what-is-a-linter-and-why-your-tea
 
 ## Examples
 
-> Limit lines to 40 characters.
+> Limit lines to 50 characters.
 ```
 # bad
 puts 'lorem pesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets Lorem Ipsum passages, and more recently with desktop publishing'
@@ -55,6 +55,16 @@ some( arg ).other
 # good
 some(arg).other
 [1, 2, 3].each { |e| puts e }
+
+```
+
+> Use spaces around { and before }.
+```
+# bad
+hash = {tom:12, max:15}
+
+# good
+hash = { tom:12, max:15 }
 
 ```
 
@@ -154,7 +164,7 @@ gem install colorize
 ### Run
 - In your Terminal run
 ```
-$ bin/main lints/filename.rb
+$ bin/main.rb lints/filename.rb
 ```
 
 ## Author
