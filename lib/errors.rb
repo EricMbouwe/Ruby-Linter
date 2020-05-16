@@ -14,12 +14,15 @@ module ErrorMethods
   def spaces_parenthesis(line)
     lz = line.size - 1
     i = 0
-    if line.include?('[') || line.include?('(') || line.include?(']') || line.include?(')') || line.include?('{') || line.include?('}')
+    if line.include?('(') || line.include?(')') || line.include?('[') || line.include?(']')
       while i < lz
-        if line[i] == '[' || line[i] == '('
-          return true if line[i + 1] == ' '
-        elsif line[i] == ']' || line[i] == ')'
-          return true if line[i - 1] == ' '
+        cc = line[i]
+        pc = line[i - 1]
+        nc = line[i + 1]
+        if cc.include?('(') || cc.include?('[')
+          return true if nc.match(/\s/)
+        elsif cc.include?(')') || cc.include?(']')
+          return true if pc.match(/\s/)
         end
         i += 1
       end

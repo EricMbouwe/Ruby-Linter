@@ -27,14 +27,26 @@ RSpec.describe ErrorMethods do
   end
 
   describe '#spaces_braces' do
+    let(:line) { 'capitalize, make your move {line}' }
+    let(:line1) { 'capitalize, make your move { line }' }
+
+    it "checks if there is space after or before '{', '}'" do
+      expect(spaces_braces(line)).to be(true)
+    end
+    it "checks if there is space after or before '{', '}'" do
+      expect(spaces_braces(line1)).not_to be(true)
+    end
+  end
+
+  describe '#spaces_parenthesis' do
     let(:line) { 'capitalize, make your move (line)' }
-    let(:line1) { 'capitalize, make your move ( line )' }
+    let(:line1) { 'capitalize, make your move ( line)' }
 
     it "checks if there is space after or before '(', '[', ']', ')'" do
-      expect(spaces_braces(line1)).to be(true)
+      expect(spaces_parenthesis(line1)).to be(true)
     end
     it "checks if there is space after or before '(', '[', ']', ')'" do
-      expect(spaces_braces(line)).not_to be(true)
+      expect(spaces_parenthesis(line)).not_to be(true)
     end
   end
 
